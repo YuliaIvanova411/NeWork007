@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import ru.netology.nework007.databinding.FragmentUsersBinding
 
-class NotificationsFragment : Fragment() {
+class UsersFragment : Fragment() {
 
     private var _binding: FragmentUsersBinding? = null
 
@@ -22,14 +22,14 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val usersViewModel =
+            ViewModelProvider(this).get(UsersViewModel::class.java)
 
         _binding = FragmentUsersBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        usersViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

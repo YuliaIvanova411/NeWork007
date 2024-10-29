@@ -6,15 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ru.netology.nework007.databinding.FragmentFeedBinding
+import ru.netology.nework007.databinding.FragmentNewPostBinding
 
+class NewPostFragment: Fragment() {
 
-class FeedFragment : Fragment() {
-
-    private var _binding: FragmentFeedBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentNewPostBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,9 +21,8 @@ class FeedFragment : Fragment() {
         val postViewModel =
             ViewModelProvider(this).get(PostViewModel::class.java)
 
-        _binding = FragmentFeedBinding.inflate(inflater, container, false)
+        _binding = FragmentNewPostBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 

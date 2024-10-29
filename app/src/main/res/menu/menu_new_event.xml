@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/photo"
+        android:enabled="true"
+        android:icon="@drawable/ic_camera"
+        android:title="@string/add_photo" />
+
+    <item
+        android:id="@+id/add_file"
+        android:enabled="true"
+        android:icon="@drawable/ic_attach"
+        android:title="@string/add_file" />
+
+    <item
+        android:id="@+id/add_users"
+        android:enabled="true"
+        android:icon="@drawable/ic_users"
+        android:title="@string/add_users" />
+    <item
+        android:id="@+id/location"
+        android:enabled="true"
+        android:icon="@drawable/ic_location"
+        android:title="@string/add_geo" />
+
+    <item
+        android:id="@+id/add_date"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
+        android:title="@string/event_date" />
+</menu>
