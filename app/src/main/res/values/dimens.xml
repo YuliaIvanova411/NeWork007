@@ -9,4 +9,9 @@
     <dimen name="small_spacing">5dp</dimen>
     <dimen name="middle_spacing">8dp</dimen>
     <dimen name="favorite_size">24dp</dimen>
+    <dimen name="big_size">96dp</dimen>
+    <dimen name="button_text">18sp</dimen>
+    <dimen name="progress_bar">150dp</dimen>
+    <dimen name="big_avatar_height">240dp</dimen>
+    <dimen name="card_post_24">24dp</dimen>
 </resources>

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -49,8 +51,20 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.common.android)
+    implementation(libs.play.services.cast.framework)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(kotlin("script-runtime"))
+    implementation (libs.hilt.android.z)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.compose)
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
+
+    implementation ("com.github.dhaval2404:imagepicker:")
+
+
 }

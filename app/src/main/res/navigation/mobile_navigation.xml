@@ -6,20 +6,149 @@
     app:startDestination="@id/nav_feed">
 
     <fragment
-        android:id="@+id/navigation_feed"
+        android:id="@+id/nav_feed"
         android:name="ru.netology.nework007.ui.feed.FeedFragment"
         android:label="@string/menu_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_nav_feed_to_newPostFragment"
+            app:destination="@id/newPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_events"
+        android:id="@+id/nav_events"
         android:name="ru.netology.nework007.ui.events.EventsFragment"
         android:label="@string/menu_events"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_nav_events_to_newEventsFragment"
+            app:destination="@id/newEventsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_users"
-        android:name="ru.netology.nework007.ui.users.UsersFragment"
+        android:id="@+id/nav_my_wall"
+        android:name="ru.netology.nework007.ui.feed.MyWallFragment"
         android:label="@string/menu_users"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_my_wall">
+        <action
+            android:id="@+id/action_nav_my_wall_to_newPostFragment"
+            app:destination="@id/newPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_nav_users_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPostFragment"
+        android:name="ru.netology.nework007.ui.feed.NewPostFragment"
+        android:label="@string/menu_new_post">
+        <action
+            android:id="@+id/action_newPostFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_newPostFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.netology.nework007.ui.auth.LoginFragment"
+        android:label="@string/sign_in"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_signInFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="ru.netology.nework007.ui.auth.RegisterFragment"
+        android:label="@string/registration"
+        tools:layout="@layout/fragment_registration" />
+    <dialog
+        android:id="@+id/exitAppDialog"
+        android:name="ru.netology.nework007.ui.dialog.ExitAppDialog"
+        android:label="ExitAppDialog" />
+    <dialog
+        android:id="@+id/authDialog"
+        android:name="ru.netology.nework007.ui.dialog.DialogAuth"
+        android:label="AuthDialog" >
+        <action
+            android:id="@+id/action_authDialog_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_authDialog_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/newEventsFragment"
+        android:name="ru.netology.nework007.ui.events.NewEventFragment"
+        android:label="@string/menu_new_event">
+        <action
+            android:id="@+id/action_newEventsFragment_to_usersFragment"
+            app:destination="@id/usersFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_newEventsFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_newEventsFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="ru.netology.nework007.ui.users.UsersFragment"
+        android:label="@string/user"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="ru.netology.nework007.ui.feed.MapFragment"
+        android:label="@string/map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="ru.netology.nework007.ui.feed.ImageFragment"
+        android:label="@string/on_picture"
+        tools:layout="@layout/fragment_image" />
+    <action
+        android:id="@+id/action_global_imageFragment"
+        app:destination="@id/imageFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.netology.nework007.ui.feed.ProfileFragment"
+        android:label="@string/profile">
+        <action
+            android:id="@+id/action_profileFragment_to_newJobFragment"
+            app:destination="@id/newJobFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <fragment
+        android:id="@+id/newJobFragment"
+        android:name="ru.netology.nework007.ui.feed.NewJobFragment"
+        android:label="@string/menu_new_job" />
 </navigation>
